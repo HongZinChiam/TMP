@@ -8,3 +8,7 @@
 body {
   font-family: 'Inter';
 }
+
+#root {
+  height: 100vh;
+}
