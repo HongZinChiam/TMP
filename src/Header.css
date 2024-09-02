@@ -4,6 +4,7 @@ header {
     padding: 1.5rem 8rem;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
 }
 
 h1 {
