@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <div class="grid">
+      <div className="grid">
         <NavBar />
         <ProductBacklog />
       </div>

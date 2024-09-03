@@ -3,7 +3,7 @@ import "./NavBar.css"
 function NavBar() {
     return (
         <nav>
-            <p class="pb-nav">Product Backlog</p>
+            <p className="pb-nav">Product Backlog</p>
         </nav>
     )
 }
