@@ -6,13 +6,13 @@ function TaskEditor() {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
 
-    const [storyPoints, setStoryPoints] = useState(0);
+    const [storyPoint, setStoryPoint] = useState(0);
     const [priorityRating, setPriorityRating] = useState('');
-    const [tags, setTags] = useState('');
+    const [tag, setTag] = useState('');
 
     const [assign, setAssign] = useState('');
     const [taskStatus, setTaskStatus] = useState('');
-    const [taskStages, setTaskStages] = useState('');
+    const [taskStage, setTaskStage] = useState('');
 
     return (
         <form>
@@ -43,14 +43,14 @@ function TaskEditor() {
 
             <section class="column">
                 <div>
-                    <label for="storyPoints">Story Points</label>
+                    <label for="storyPoint">Story Point</label>
                     <input 
-                        id="storyPoints"
+                        id="storyPoint"
                         className="blue input column-input"
                         type="number"
                         required
-                        value={storyPoints}
-                        onChange={e => setStoryPoints(e.target.value)}
+                        value={storyPoint}
+                        onChange={e => setStoryPoint(e.target.value)}
                     />
                 </div>
                 <div>
@@ -69,13 +69,13 @@ function TaskEditor() {
                     </select>
                 </div>
                 <div>
-                    <label for="tags">Tags</label>
+                    <label for="tag">Tag</label>
                     <select
-                        id="tags"
+                        id="tag"
                         className="yellow input column-input"
                         required
-                        value={tags}
-                        onChange={e => setTags(e.target.value)}
+                        value={tag}
+                        onChange={e => setTag(e.target.value)}
                     >
                         <option value="frontend">Frontend</option>
                         <option value="backend">Backend</option>
@@ -99,6 +99,7 @@ function TaskEditor() {
                         value={assign}
                         onChange={e => setAssign(e.target.value)}
                     >
+                        <option value="None">None</option>
                     </select>
                 </div>
                 <div>
@@ -116,13 +117,13 @@ function TaskEditor() {
                     </select>
                 </div>
                 <div>
-                    <label for="taskStages">Task Stages</label>
+                    <label for="taskStage">Task Stage</label>
                     <select
-                        id="taskStages"
+                        id="taskStage"
                         className="blue input column-input"
                         required
-                        value={taskStages}
-                        onChange={e => setTaskStages(e.target.value)}
+                        value={taskStage}
+                        onChange={e => setTaskStage(e.target.value)}
                     >
                         <option value="planning">Planning</option>
                         <option value="development">Development</option>
