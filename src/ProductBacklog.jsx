@@ -8,18 +8,18 @@ function ProductBacklog() {
     const [showEditor, setShowEditor] = useState(false)
     
     return (
-        <div class="container">
+        <div className="container">
             {
                 !showEditor
                 ? (
-                    <section class="backlog">
+                    <section className="backlog">
                         <h2>Product Backlog</h2>
-                        <div class="tasks">
+                        <div className="tasks">
                             <TaskCard />
                             <TaskCard />
                         </div>
-                        <button class="add" onClick={() => setShowEditor(prevShowEditor => !prevShowEditor)}>
-                            <i class="fa-solid fa-plus"></i>
+                        <button className="add" onClick={() => setShowEditor(prevShowEditor => !prevShowEditor)}>
+                            <i className="fa-solid fa-plus"></i>
                             <p>Add</p>
                         </button>
                     </section>
