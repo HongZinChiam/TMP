@@ -14,10 +14,22 @@ function TaskEditor() {
     const [taskStatus, setTaskStatus] = useState('');
     const [taskStage, setTaskStage] = useState('');
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        const task = { taskName, description, storyPoint, priorityRating, tag, assign, taskStatus, taskStage }
+        fetch("http://localhost:5000/tasks", {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(task)
+        }).then(()=> {
+            console.log('Added task to Product Backlog')
+        })
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <section>
-                <label for="taskName">Task Name</label>
+                <label htmlFor="taskName">Task Name</label>
                 <input 
                     id="taskName"
                     className="taskName blue input"
@@ -29,7 +41,7 @@ function TaskEditor() {
             </section>
             
             <section>
-                <label for="description">Description</label>
+                <label htmlFor="description">Description</label>
                 <textarea
                     id="description"
                     className="description blue input"
@@ -41,9 +53,9 @@ function TaskEditor() {
             </section>
 
 
-            <section class="column">
+            <section className="column">
                 <div>
-                    <label for="storyPoint">Story Point</label>
+                    <label htmlFor="storyPoint">Story Point</label>
                     <input 
                         id="storyPoint"
                         className="blue input column-input"
@@ -54,7 +66,7 @@ function TaskEditor() {
                     />
                 </div>
                 <div>
-                    <label for="priorityRating">Priority Rating</label>
+                    <label htmlFor="priorityRating">Priority Rating</label>
                     <select
                         id="priorityRating"
                         className="yellow input column-input"
@@ -69,7 +81,7 @@ function TaskEditor() {
                     </select>
                 </div>
                 <div>
-                    <label for="tag">Tag</label>
+                    <label htmlFor="tag">Tag</label>
                     <select
                         id="tag"
                         className="yellow input column-input"
@@ -89,9 +101,9 @@ function TaskEditor() {
                 </div>
             </section>
 
-            <section class="column">
+            <section className="column">
                 <div>
-                    <label for="assign">Assign</label>
+                    <label htmlFor="assign">Assign</label>
                     <select
                         id="assign"
                         className="blue input column-input"
@@ -103,7 +115,7 @@ function TaskEditor() {
                     </select>
                 </div>
                 <div>
-                    <label for="taskStatus">Task Status</label>
+                    <label htmlFor="taskStatus">Task Status</label>
                     <select
                         id="taskStatus"
                         className="blue input column-input"
@@ -117,7 +129,7 @@ function TaskEditor() {
                     </select>
                 </div>
                 <div>
-                    <label for="taskStage">Task Stage</label>
+                    <label htmlFor="taskStage">Task Stage</label>
                     <select
                         id="taskStage"
                         className="blue input column-input"
